@@ -10,6 +10,8 @@ export default (sequelize, DataTypes) => {
     },
     { underscored: true }
   );
-
+  User.associate = models => {
+    User.hasMany(models.Poll);
+  };
   return User;
 };

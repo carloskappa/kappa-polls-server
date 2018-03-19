@@ -2,7 +2,11 @@ export default (sequelize, DataTypes) => {
   var Topic = sequelize.define(
     "topic",
     {
-      value: DataTypes.STRING
+      value: DataTypes.STRING,
+      votes: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+      }
     },
     { underscored: true }
   );
